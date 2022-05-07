@@ -56,7 +56,8 @@
     </div>
 
     <!-- Modal -->
-    <div wire:ignore.self class="modal fade" id="addPostModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+    <div wire:ignor
+    e.self class="modal fade" id="addPostModal" tabindex="-1" aria-labelledby="exampleModalLabel"
         aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
