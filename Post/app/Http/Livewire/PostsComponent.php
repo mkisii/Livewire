@@ -10,6 +10,8 @@ class PostsComponent extends Component
 {
     public $title;
     public $description;
+    // public $post_id;
+    
 
 
     protected $listeners = [
@@ -26,7 +28,6 @@ class PostsComponent extends Component
         // ]);
 
     
-
         $post = new Post();
         $post->title = $this->title;
         $post->description = $this->description;
@@ -47,6 +48,38 @@ class PostsComponent extends Component
     {
         $this->title = null;
         $this->description=null;
+    }
+
+
+    public function updatePost($id) 
+    {
+
+     
+        $post = Post::where('id', $id)->first();
+         
+        $this->post_id = $post->id;
+        $this->title = $post->title;
+        $this->description = $post->description; 
+
+        dd($post);
+
+    }
+
+
+    public function updatePostData($id) 
+    {
+        $this->validate([
+            'title' => 'required',
+            'description' =>'required',
+            'post_id' => 'required'
+            
+        ]);
+        $post =Post::where('id', $this->post_id)->first();
+    }
+
+    public function deletePost($id)
+    {
+        $post = Post::where('id', $id);
     }
 
 

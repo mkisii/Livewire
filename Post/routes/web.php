@@ -18,8 +18,10 @@ use App\Http\Livewire\PostsComponent;
 //     return view('welcome');
 // });
 
-Route::get('posts',PostsComponent::class);
+
 
 Auth::routes();
+
+Route::get('posts',PostsComponent::class);
 
 Route::get('/', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
